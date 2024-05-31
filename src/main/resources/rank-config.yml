@@ -1,0 +1,52 @@
+
+##############
+# TOWN RANKS #
+##############
+
+# Define different ranks and their corresponding permissions
+# If you wish to add more unique ranks hardcode it inside the TownRank, but make sure to specify the right priority.
+ranks:
+  # Default town rank
+  MEMBER:
+    permissions:
+      - towns.leave
+      - towns.balance.deposit
+  OFFICER:
+    permissions:
+      - towns.rank.addremove
+      - towns.leave
+      - towns.balance.deposit
+  COMAYOR:
+    permissions:
+      - towns.chunks.claim
+      - towns.chunks.unclaim
+      - towns.rank.addremove
+      - towns.invite
+      - towns.leave
+      - towns.balance.deposit
+      - towns.balance.withdraw
+  ASSISTANT:
+    permissions:
+      - towns.chunks.claim
+      - towns.chunks.unclaim
+      - towns.rank.addremove
+      - towns.invite
+      - towns.leave
+      - towns.balance.deposit
+      - towns.balance.withdraw
+      - towns.set.name
+      - towns.set.description
+      - towns.set.spawn
+  MAYOR:
+    permissions:
+      - towns.chunks.claim
+      - towns.chunks.unclaim
+      - towns.rank.addremove
+      - towns.invite
+      - towns.delete
+      - towns.leave
+      - towns.balance.deposit
+      - towns.balance.withdraw
+      - towns.set.name
+      - towns.set.description
+      - towns.set.spawn

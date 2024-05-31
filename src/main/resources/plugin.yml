@@ -1,0 +1,86 @@
+name: Towns
+version: '${project.version}'
+main: tree.towns.TownsPlugin
+api-version: '1.20'
+load: STARTUP
+############
+# Commands #
+############
+
+commands:
+  nodes:
+    description: manages nodes
+    aliases: [ns]
+  town:
+    description: balls
+    aliases: [t]
+  resident:
+    description: balls but better
+    aliases: [res]
+  townchat:
+    description: mega balls
+    aliases: [tc]
+  general:
+    description: super balls
+    aliases: [g]
+
+###############
+# Permissions #
+###############
+
+permissions:
+  towns.admin:
+    description: Admin permissions for Towns
+    children:
+      towns.delete: true
+      towns.rank.addremove: true
+      towns.invite: true
+      towns.resident.info: true
+      towns.leave: true
+      towns.chunks.*: true
+      towns.balance.*: true
+      towns.set.*: true
+  towns.delete:
+    description: Allows the player to delete a town
+  towns.rank.addremove:
+    description: Allows the player to remove a rank from a town
+  towns.invite:
+    description: Allows the player to invite players to a town
+  towns.chunks.*:
+    description: Allows the player to manage town chunks
+    children:
+      - towns.chunks.claim
+      - towns.chunks.unclaim
+  towns.chunks.claim:
+    description: Allows the player to claim chunks
+  towns.chunks.unclaim:
+    description: Allows the player to unclaim chunks
+  towns.resident.info:
+    description: Allows the player to lookup other players
+    default: true
+  towns.leave:
+    description: Allows the player to leave the town
+    default: true
+  towns.balance.*:
+    description: Allows the player to manage town balance
+    children:
+      - towns.balance.withdraw
+      - towns.balance.deposit
+  towns.balance.withdraw:
+    description: Allows the player to withdraw money from the town
+  towns.balance.deposit:
+    description: Allows the player to deposit money from the town
+  towns.kick:
+    description: Allows the player to kick people from the town
+  towns.set.*:
+    description: Allows the player to set options in the town
+    children:
+      - towns.set.description
+      - towns.set.name
+      - towns.set.spawn
+  towns.set.description:
+    description: Allows the player to change the description of the town
+  towns.set.name:
+    description: Allows the player to change the name of the town
+  towns.set.spawn:
+    description: Allows the player to set the spawn of the town
